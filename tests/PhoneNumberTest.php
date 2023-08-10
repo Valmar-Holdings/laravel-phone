@@ -525,4 +525,13 @@ class PhoneNumberTest extends TestCase
         $expected = '012 34 56 78';
         $this->assertEquals($expected, $actual);
     }
+
+    /** @test */
+    public function test_issue_234()
+    {
+        $phone = new PhoneNumber('0712871097', 'ZA');
+        $expected = $phone->formatE164();
+
+        $this->assertEquals($expected, '+27712871097');
+    }
 }
